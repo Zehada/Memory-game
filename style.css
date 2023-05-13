@@ -41,6 +41,10 @@ img {
     transform: rotateY(180deg);
 }
 
+.flip-card-inner.unflipped {
+    transform: rotateY(-180deg);
+}
+
 .flip-card-front,
 .flip-card-back {
     position: absolute;

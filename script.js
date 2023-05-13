@@ -87,16 +87,45 @@ document.getElementById("huit").addEventListener("click", function () {
 
 
 
-// Code pour pouvoir ouvrir seulement 2 cartes.
-
 
 const container = document.querySelectorAll('.flip-card');
 let card = 0;
-
+let flippedCard1 = "";
+let flippedCard2 = "";
+let imageA = "";
+let imageB = "";
 container.forEach((g) => {
     g.addEventListener("click", function () {
-        g.querySelector('.flip-card-inner').classList.add('is-flipped');
 
+        function unflip() {
+            flippedCard1.classList.remove('is-flipped');
+            flippedCard2.classList.remove('is-flipped');
+        }
 
+        function retirer() {
+            flippedCard1.style.display = "none";
+            flippedCard2.style.display = "none";
+        }
+
+        if (document.querySelectorAll('.is-flipped').length < 2) {
+            if (document.querySelectorAll('.is-flipped').length === 1) {
+                flippedCard2 = g.querySelector('.flip-card-inner');
+                flippedCard2.classList.add('is-flipped');
+                imageB = flippedCard2.querySelector(".flip-card-back").querySelector("img");
+                if (imageA.src !== imageB.src) {
+                    setTimeout(unflip, 1500);
+                } else if (imageA.src === imageB.src) {
+                    setTimeout(retirer, 1000);
+                    setTimeout(unflip, 1000);
+                }
+            }
+
+            if (document.querySelectorAll('.is-flipped').length === 0) {
+                flippedCard1 = g.querySelector('.flip-card-inner');
+                flippedCard1.classList.add('is-flipped');
+                imageA = flippedCard1.querySelector(".flip-card-back").querySelector("img");
+            }
+        }
     })
 });
+
