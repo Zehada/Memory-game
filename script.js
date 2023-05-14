@@ -4,7 +4,8 @@ let cardList = [];
 
 document.getElementById("quatre").addEventListener("click", function () {
 
-    document.getElementById("grille").style.cssText = "display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; width: 50%";
+    document.getElementById("grille").style.display = "grid";
+    document.getElementById("chrono").style.display = "flex";
     document.getElementById("choix").style.display = "none";
 
     for (i = 0; i < 16; i++) {
@@ -51,6 +52,7 @@ document.getElementById("six").addEventListener("click", function () {
         cardList.splice(a, 1);
     }
     document.getElementById("choix").style.cssText = "display: none";
+    document.getElementById("chrono").style.cssText = "display: flex; width: 80%";
     document.getElementById("grille").style.cssText = "display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; grid-template-rows: 15% 15% 15% 15% 15% 15%; width: 80%";
 });
 
@@ -82,6 +84,7 @@ document.getElementById("huit").addEventListener("click", function () {
         cardList.splice(a, 1);
     }
     document.getElementById("choix").style.cssText = "display: none";
+    document.getElementById("chrono").style.cssText = "display: flex; width: 90%";
     document.getElementById("grille").style.cssText = "display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; grid-template-rows: 11% 11% 11% 11% 11% 11% 11% 11%; width: 90%";
 });
 
@@ -94,9 +97,12 @@ let flippedCard1 = "";
 let flippedCard2 = "";
 let imageA = "";
 let imageB = "";
+let paires = 0;
+let score = 1;
 container.forEach((g) => {
-    g.addEventListener("click", function () {
 
+
+    g.addEventListener("click", function () {
         function unflip() {
             flippedCard1.classList.remove('is-flipped');
             flippedCard2.classList.remove('is-flipped');
@@ -108,7 +114,9 @@ container.forEach((g) => {
         }
 
         if (document.querySelectorAll('.is-flipped').length < 2) {
+
             if (document.querySelectorAll('.is-flipped').length === 1) {
+                document.getElementById("coups").innerHTML = "Coups : " + score++;
                 flippedCard2 = g.querySelector('.flip-card-inner');
                 flippedCard2.classList.add('is-flipped');
                 imageB = flippedCard2.querySelector(".flip-card-back").querySelector("img");
@@ -117,6 +125,14 @@ container.forEach((g) => {
                 } else if (imageA.src === imageB.src) {
                     setTimeout(retirer, 1000);
                     setTimeout(unflip, 1000);
+                    paires++;
+                    console.log(paires);
+                    if (paires === 8 || paires === 18 || paires === 32) {
+                        document.getElementById("grille").style.display = "none";
+                        document.getElementById("chrono").style.width = "15%";
+                        document.getElementById("message").style.display = "flex";
+
+                    }
                 }
             }
 
@@ -128,4 +144,5 @@ container.forEach((g) => {
         }
     })
 });
+
 

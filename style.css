@@ -2,8 +2,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     margin: 0;
     height: 100vh;
+}
+
+#chrono {
+    display: none;
+    width: 50%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#message {
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
 #grille {
@@ -12,7 +26,7 @@ body {
     grid-template-rows: 22% 22% 22% 22%;
     grid-gap: 10px;
     height: 90vh;
-    width: 30%;
+    width: 50%;
 }
 
 
