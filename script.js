@@ -1,8 +1,17 @@
 
+
+
+
+
+
+
 let grille = document.getElementById("grille");
 let cardList = [];
 
+
 document.getElementById("quatre").addEventListener("click", function () {
+
+
 
     document.getElementById("grille").style.display = "grid";
     document.getElementById("chrono").style.display = "flex";
@@ -99,10 +108,33 @@ let imageA = "";
 let imageB = "";
 let paires = 0;
 let score = 1;
+let temps = 1;
+let click = 0;
+
+
 container.forEach((g) => {
 
 
     g.addEventListener("click", function () {
+        function augmenterTemps() {
+            let minutes = parseInt(temps / 60, 10);
+            let secondes = parseInt(temps % 60, 10);
+            minutes = minutes < 10 ? "0" + minutes : minutes
+            secondes = secondes < 10 ? "0" + secondes : secondes
+            document.getElementById("timer").innerText = minutes + ":" + secondes;
+            temps++;
+        }
+
+
+
+        var timer;
+
+        if (click === 0) {
+            timer = setInterval(augmenterTemps, 1000);
+            click++;
+        }
+
+
         function unflip() {
             flippedCard1.classList.remove('is-flipped');
             flippedCard2.classList.remove('is-flipped');
@@ -120,17 +152,22 @@ container.forEach((g) => {
                 flippedCard2 = g.querySelector('.flip-card-inner');
                 flippedCard2.classList.add('is-flipped');
                 imageB = flippedCard2.querySelector(".flip-card-back").querySelector("img");
+
                 if (imageA.src !== imageB.src) {
-                    setTimeout(unflip, 1500);
-                } else if (imageA.src === imageB.src) {
+                    setTimeout(unflip, 1000);
+                } else if (imageA.src === imageB.src && flippedCard1 !== flippedCard2) {
                     setTimeout(retirer, 1000);
                     setTimeout(unflip, 1000);
                     paires++;
-                    console.log(paires);
                     if (paires === 8 || paires === 18 || paires === 32) {
                         document.getElementById("grille").style.display = "none";
                         document.getElementById("chrono").style.width = "15%";
                         document.getElementById("message").style.display = "flex";
+                        for (i = 0; i < 100; i++) {
+                            window.clearInterval(i);
+                        }
+
+
 
                     }
                 }
@@ -144,5 +181,4 @@ container.forEach((g) => {
         }
     })
 });
-
 
