@@ -15,7 +15,7 @@ document.getElementById("quatre").addEventListener("click", function () {
 
     document.getElementById("grille").style.display = "grid";
     document.getElementById("chrono").style.display = "flex";
-    document.getElementById("choix").style.display = "none";
+    document.getElementById("main").style.display = "none";
 
     for (i = 0; i < 16; i++) {
         cardList.push(i);
@@ -60,7 +60,7 @@ document.getElementById("six").addEventListener("click", function () {
         document.getElementsByClassName("flip-card-back")[cardList[a]].innerHTML += "<img src='https://picsum.photos/200/300?random=" + i + "'>";
         cardList.splice(a, 1);
     }
-    document.getElementById("choix").style.cssText = "display: none";
+    document.getElementById("main").style.cssText = "display: none";
     document.getElementById("chrono").style.cssText = "display: flex; width: 80%";
     document.getElementById("grille").style.cssText = "display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; grid-template-rows: 15% 15% 15% 15% 15% 15%; width: 80%";
 });
@@ -92,7 +92,7 @@ document.getElementById("huit").addEventListener("click", function () {
         document.getElementsByClassName("flip-card-back")[cardList[a]].innerHTML += "<img src='https://picsum.photos/200/300?random=" + i + "'>";
         cardList.splice(a, 1);
     }
-    document.getElementById("choix").style.cssText = "display: none";
+    document.getElementById("main").style.cssText = "display: none";
     document.getElementById("chrono").style.cssText = "display: flex; width: 90%";
     document.getElementById("grille").style.cssText = "display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; grid-template-rows: 11% 11% 11% 11% 11% 11% 11% 11%; width: 90%";
 });

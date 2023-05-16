@@ -5,6 +5,24 @@ body {
     flex-direction: column;
     margin: 0;
     height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#choix {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    padding: 10px;
+    margin: 20px;
 }
 
 #chrono {
