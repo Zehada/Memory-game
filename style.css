@@ -6,13 +6,32 @@ body {
     margin: 0;
     height: 100vh;
     font-family: 'Roboto', sans-serif;
+    background-color: bisque;
 }
 
 #main {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    height: 100vh;
+}
+
+button {
+    background-color: #297fb900;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: black;
+    color: bisque;
+
+}
+
+h1 {
+    padding: 10px;
+    border: solid 3px black
 }
 
 #choix {
@@ -29,7 +48,18 @@ button {
     display: none;
     width: 50%;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
+}
+
+#coups {
+    text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+    #chrono {
+        flex-direction: column;
+    }
 }
 
 #message {

@@ -161,7 +161,7 @@ container.forEach((g) => {
                     paires++;
                     if (paires === 8 || paires === 18 || paires === 32) {
                         document.getElementById("grille").style.display = "none";
-                        document.getElementById("chrono").style.width = "15%";
+                        document.getElementById("chrono").style.width = "20%";
                         document.getElementById("message").style.display = "flex";
                         for (i = 0; i < 100; i++) {
                             window.clearInterval(i);
