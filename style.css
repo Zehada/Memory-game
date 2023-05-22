@@ -1,4 +1,5 @@
 body {
+    color: #404699;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,7 +7,8 @@ body {
     margin: 0;
     height: 100vh;
     font-family: 'Roboto', sans-serif;
-    background-color: bisque;
+    background: rgb(183, 223, 255);
+    background: linear-gradient(90deg, rgba(183, 223, 255, 1) 0%, rgba(224, 185, 255, 1) 50%, rgba(255, 180, 180, 1) 100%);
 }
 
 #main {
@@ -17,21 +19,15 @@ body {
     height: 100vh;
 }
 
-button {
-    background-color: #297fb900;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
 button:hover {
-    background-color: black;
-    color: bisque;
+    background-color: #404699;
+    color: white;
 
 }
 
 h1 {
     padding: 10px;
-    border: solid 3px black
+    border: solid 3px #404699;
 }
 
 #choix {
@@ -40,8 +36,14 @@ h1 {
 }
 
 button {
+    color: #404699;
     padding: 10px;
     margin: 20px;
+    border: solid 3px #404699;
+    background-color: #297fb900;
+    text-transform: uppercase;
+    font-weight: bold;
+
 }
 
 #chrono {
@@ -117,7 +119,7 @@ img {
 }
 
 .flip-card-front {
-    background-color: #bbb;
+    background-color: #404699;
     color: black;
 }
 

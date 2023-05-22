@@ -22,12 +22,15 @@ document.getElementById("quatre").addEventListener("click", function () {
     }
 
     for (i = 0; i < 8; i++) {
-        document.getElementsByClassName("flip-card-back")[cardList[0]].innerHTML = "<img src='https://picsum.photos/200/300?random=" + i + "'>";
-        cardList.splice(0, 1);
+        let b = Math.floor(Math.random() * cardList.length);
+        document.getElementsByClassName("flip-card-back")[cardList[b]].innerHTML = "<img src='https://picsum.photos/id/" + (i + 10) + "/200/300'>";
+        cardList.splice(b, 1);
+        console.log(cardList)
 
         let a = Math.floor(Math.random() * cardList.length);
-        document.getElementsByClassName("flip-card-back")[cardList[a]].innerHTML += "<img src='https://picsum.photos/200/300?random=" + i + "'>";
+        document.getElementsByClassName("flip-card-back")[cardList[a]].innerHTML += "<img src='https://picsum.photos/id/" + (i + 10) + "/200/300'>";;
         cardList.splice(a, 1);
+        console.log(a)
     }
 });
 
@@ -53,11 +56,12 @@ document.getElementById("six").addEventListener("click", function () {
     }
 
     for (i = 0; i < 18; i++) {
-        document.getElementsByClassName("flip-card-back")[cardList[0]].innerHTML = "<img src='https://picsum.photos/200/300?random=" + i + "'>";
-        cardList.splice(0, 1);
+        let b = Math.floor(Math.random() * cardList.length);
+        document.getElementsByClassName("flip-card-back")[cardList[b]].innerHTML = "<img src='https://picsum.photos/id/" + (i + 10) + "/200/300'>";
+        cardList.splice(b, 1);
 
         let a = Math.floor(Math.random() * cardList.length);
-        document.getElementsByClassName("flip-card-back")[cardList[a]].innerHTML += "<img src='https://picsum.photos/200/300?random=" + i + "'>";
+        document.getElementsByClassName("flip-card-back")[cardList[a]].innerHTML += "<img src='https://picsum.photos/id/" + (i + 10) + "/200/300'>";;
         cardList.splice(a, 1);
     }
     document.getElementById("main").style.cssText = "display: none";
@@ -85,11 +89,12 @@ document.getElementById("huit").addEventListener("click", function () {
     }
 
     for (i = 0; i < 32; i++) {
-        document.getElementsByClassName("flip-card-back")[cardList[0]].innerHTML = "<img src='https://picsum.photos/200/300?random=" + i + "'>";
-        cardList.splice(0, 1);
+        let b = Math.floor(Math.random() * cardList.length);
+        document.getElementsByClassName("flip-card-back")[cardList[b]].innerHTML = "<img src='https://picsum.photos/id/" + (i + 10) + "/200/300'>";
+        cardList.splice(b, 1);
 
         let a = Math.floor(Math.random() * cardList.length);
-        document.getElementsByClassName("flip-card-back")[cardList[a]].innerHTML += "<img src='https://picsum.photos/200/300?random=" + i + "'>";
+        document.getElementsByClassName("flip-card-back")[cardList[a]].innerHTML += "<img src='https://picsum.photos/id/" + (i + 10) + "/200/300'>";;
         cardList.splice(a, 1);
     }
     document.getElementById("main").style.cssText = "display: none";
